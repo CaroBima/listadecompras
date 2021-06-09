@@ -1,12 +1,28 @@
 
 package Logica;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
-public class Pedido {
+@Entity
+public class Pedido implements Serializable {
+    
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Id
+    private int idPedido; 
+    
+    @Basic
     private double precioFacturado; //si falta algun producto no lo cobran, el precio facturado puede diferir del precio final del pedido
     private double precioFinalPedido;
-    private int idPedido;     
+     
+    @Temporal(TemporalType.DATE)
     private Date fechaPedido;
 
    

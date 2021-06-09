@@ -1,7 +1,11 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Persistencia;
 
-import Logica.ListaCompras;
+import Logica.Pedido;
 import Persistencia.exceptions.NonexistentEntityException;
 import java.io.Serializable;
 import java.util.List;
@@ -12,10 +16,13 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
+/**
+ *
+ * @author Caro
+ */
+public class PedidoJpaController implements Serializable {
 
-public class ListaComprasJpaController implements Serializable {
-
-    public ListaComprasJpaController(EntityManagerFactory emf) {
+    public PedidoJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
     private EntityManagerFactory emf = null;
@@ -24,12 +31,12 @@ public class ListaComprasJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    public void create(ListaCompras listaCompras) {
+    public void create(Pedido pedido) {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            em.persist(listaCompras);
+            em.persist(pedido);
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -38,19 +45,19 @@ public class ListaComprasJpaController implements Serializable {
         }
     }
 
-    public void edit(ListaCompras listaCompras) throws NonexistentEntityException, Exception {
+    public void edit(Pedido pedido) throws NonexistentEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            listaCompras = em.merge(listaCompras);
+            pedido = em.merge(pedido);
             em.getTransaction().commit();
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                int id = listaCompras.getIdLista();
-                if (findListaCompras(id) == null) {
-                    throw new NonexistentEntityException("The listaCompras with id " + id + " no longer exists.");
+                int id = pedido.getIdPedido();
+                if (findPedido(id) == null) {
+                    throw new NonexistentEntityException("The pedido with id " + id + " no longer exists.");
                 }
             }
             throw ex;
@@ -66,14 +73,14 @@ public class ListaComprasJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            ListaCompras listaCompras;
+            Pedido pedido;
             try {
-                listaCompras = em.getReference(ListaCompras.class, id);
-                listaCompras.getIdLista();
+                pedido = em.getReference(Pedido.class, id);
+                pedido.getIdPedido();
             } catch (EntityNotFoundException enfe) {
-                throw new NonexistentEntityException("The listaCompras with id " + id + " no longer exists.", enfe);
+                throw new NonexistentEntityException("The pedido with id " + id + " no longer exists.", enfe);
             }
-            em.remove(listaCompras);
+            em.remove(pedido);
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -82,19 +89,19 @@ public class ListaComprasJpaController implements Serializable {
         }
     }
 
-    public List<ListaCompras> findListaComprasEntities() {
-        return findListaComprasEntities(true, -1, -1);
+    public List<Pedido> findPedidoEntities() {
+        return findPedidoEntities(true, -1, -1);
     }
 
-    public List<ListaCompras> findListaComprasEntities(int maxResults, int firstResult) {
-        return findListaComprasEntities(false, maxResults, firstResult);
+    public List<Pedido> findPedidoEntities(int maxResults, int firstResult) {
+        return findPedidoEntities(false, maxResults, firstResult);
     }
 
-    private List<ListaCompras> findListaComprasEntities(boolean all, int maxResults, int firstResult) {
+    private List<Pedido> findPedidoEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(ListaCompras.class));
+            cq.select(cq.from(Pedido.class));
             Query q = em.createQuery(cq);
             if (!all) {
                 q.setMaxResults(maxResults);
@@ -106,20 +113,20 @@ public class ListaComprasJpaController implements Serializable {
         }
     }
 
-    public ListaCompras findListaCompras(int id) {
+    public Pedido findPedido(int id) {
         EntityManager em = getEntityManager();
         try {
-            return em.find(ListaCompras.class, id);
+            return em.find(Pedido.class, id);
         } finally {
             em.close();
         }
     }
 
-    public int getListaComprasCount() {
+    public int getPedidoCount() {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            Root<ListaCompras> rt = cq.from(ListaCompras.class);
+            Root<Pedido> rt = cq.from(Pedido.class);
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();
