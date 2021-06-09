@@ -7,7 +7,7 @@ public class Producto {
     private String tipoProducto; // categoria: limpieza, almacen, electrónica, etc
     private String nombreProducto;
     private String capacidad;
-    private String precioProducto;
+    
 
     public Producto() {
     }
@@ -17,7 +17,7 @@ public class Producto {
         this.tipoProducto = tipoProducto;
         this.nombreProducto = nombreProducto;
         this.capacidad = capacidad;
-        this.precioProducto = precioProducto;
+        /*this.precioProducto = precioProducto;*/
     }
 
     public int getIdProducto() {
@@ -52,14 +52,14 @@ public class Producto {
         this.capacidad = capacidad;
     }
 
-    public String getPrecioProducto() {
+  /*  public String getPrecioProducto() {
         return precioProducto;
     }
 
     public void setPrecioProducto(String precioProducto) {
         this.precioProducto = precioProducto;
     }
-    
+    */
     
     
 }
