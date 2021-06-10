@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
@@ -20,6 +21,11 @@ public class TipoProductoJpaController implements Serializable {
     }
     private EntityManagerFactory emf = null;
 
+    //creo el constructor
+    public TipoProductoJpaController(){
+        emf = Persistence.createEntityManagerFactory("ListaComprasPU");
+    }
+    
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
