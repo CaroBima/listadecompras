@@ -11,11 +11,12 @@ package Igu;
  */
 public class FrmPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrmPrincipal
-     */
+    DlgAniadirProducto formularioAniadir = new DlgAniadirProducto(this, true);
+    
+    
     public FrmPrincipal() {
         initComponents();
+        
     }
 
     /**
@@ -86,9 +87,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void mnuAniadirProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAniadirProductoActionPerformed
         //creo y muestro la ventana para añadir un nuevo producto
-        DlgAniadirProducto formularioAniadir = new DlgAniadirProducto(this, true);
-        formularioAniadir .setVisible(true);
-        formularioAniadir .setLocationRelativeTo(null);
+        formularioAniadir.setVisible(true);
+        formularioAniadir.setLocationRelativeTo(this);
     }//GEN-LAST:event_mnuAniadirProductoActionPerformed
 
     /**
