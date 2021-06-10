@@ -28,11 +28,16 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        MnuPrincipal = new javax.swing.JMenuBar();
         MnuVerListas = new javax.swing.JMenu();
-        MnuNueva = new javax.swing.JMenu();
+        mnuAniadir = new javax.swing.JMenu();
+        MnuAniadirLista = new javax.swing.JMenuItem();
+        mnuAniadirProducto = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Lista de Compras");
+        setName("framePrincipal"); // NOI18N
+        setResizable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -45,13 +50,25 @@ public class FrmPrincipal extends javax.swing.JFrame {
             .addGap(0, 561, Short.MAX_VALUE)
         );
 
-        MnuVerListas.setText("File");
-        jMenuBar1.add(MnuVerListas);
+        MnuVerListas.setText("Ver listas");
+        MnuPrincipal.add(MnuVerListas);
 
-        MnuNueva.setText("Edit");
-        jMenuBar1.add(MnuNueva);
+        mnuAniadir.setText("Añadir");
 
-        setJMenuBar(jMenuBar1);
+        MnuAniadirLista.setText("Llista");
+        mnuAniadir.add(MnuAniadirLista);
+
+        mnuAniadirProducto.setText("Producto");
+        mnuAniadirProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuAniadirProductoActionPerformed(evt);
+            }
+        });
+        mnuAniadir.add(mnuAniadirProducto);
+
+        MnuPrincipal.add(mnuAniadir);
+
+        setJMenuBar(MnuPrincipal);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -67,15 +84,24 @@ public class FrmPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void mnuAniadirProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAniadirProductoActionPerformed
+        //creo y muestro la ventana para añadir un nuevo producto
+        DlgAniadirProducto formularioAniadir = new DlgAniadirProducto(this, true);
+        formularioAniadir .setVisible(true);
+        formularioAniadir .setLocationRelativeTo(null);
+    }//GEN-LAST:event_mnuAniadirProductoActionPerformed
+
     /**
      * @param args the command line arguments
      */
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu MnuNueva;
+    private javax.swing.JMenuItem MnuAniadirLista;
+    private javax.swing.JMenuBar MnuPrincipal;
     private javax.swing.JMenu MnuVerListas;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu mnuAniadir;
+    private javax.swing.JMenuItem mnuAniadirProducto;
     // End of variables declaration//GEN-END:variables
 }
