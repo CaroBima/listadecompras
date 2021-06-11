@@ -87,8 +87,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void mnuAniadirProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAniadirProductoActionPerformed
         //creo y muestro la ventana para añadir un nuevo producto
-        formularioAniadir.setVisible(true);
         formularioAniadir.setLocationRelativeTo(this);
+        formularioAniadir.setVisible(true);
+        
     }//GEN-LAST:event_mnuAniadirProductoActionPerformed
 
     /**
