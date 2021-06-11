@@ -1,22 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Igu;
 
-/**
- *
- * @author Caro
- */
 public class FrmPrincipal extends javax.swing.JFrame {
 
     DlgAniadirProducto formularioAniadir = new DlgAniadirProducto(this, true);
     
-    
     public FrmPrincipal() {
         initComponents();
-        
     }
 
     /**
@@ -86,7 +76,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mnuAniadirProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAniadirProductoActionPerformed
-        //creo y muestro la ventana para añadir un nuevo producto
+        //posiciono y muestro la ventana para añadir un nuevo producto
         formularioAniadir.setLocationRelativeTo(this);
         formularioAniadir.setVisible(true);
         
