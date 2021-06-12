@@ -21,6 +21,11 @@ public class TipoProducto implements Serializable {
         this.idTipoProducto = idTipoProducto;
         this.categoría = categoría;
     }
+    
+    public TipoProducto() {
+        
+    }
+    
 
     public int getIdTipoProducto() {
         return idTipoProducto;
