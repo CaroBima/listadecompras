@@ -2,6 +2,8 @@
 
 package Igu;
 
+import Logica.Controladora;
+
 public class DlgAniadirProducto extends javax.swing.JDialog {
 
    
@@ -159,7 +161,15 @@ public class DlgAniadirProducto extends javax.swing.JDialog {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // TODO add your handling code here:
+        Controladora control = new Controladora();
+        String nombre, capacidad;
+        int indice;
+        nombre = txtNombreProducto.getText();
+        capacidad = txtCapacidad.getText();
+        indice = cboTipoProd.getSelectedIndex();
+        
+        //paso los parametros a la logica
+        control.agregarProducto(nombre, capacidad, indice);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed

@@ -1,5 +1,7 @@
 package Igu;
 
+import Logica.Controladora;
+
 
 public class DlgNuevoTipoProducto extends javax.swing.JDialog {
 
@@ -41,6 +43,11 @@ public class DlgNuevoTipoProducto extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -108,6 +115,13 @@ public class DlgNuevoTipoProducto extends javax.swing.JDialog {
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
        dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        Controladora control = new Controladora();
+        String nuevoTipoProd;
+        nuevoTipoProd = txtNuevoTipoProducto.getText();
+        control.agregarNuevoTipoProducto(nuevoTipoProd);
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
      * @param args the command line arguments
