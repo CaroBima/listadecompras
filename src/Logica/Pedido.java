@@ -14,8 +14,8 @@ import javax.persistence.TemporalType;
 @Entity
 public class Pedido implements Serializable {
     
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idPedido; 
     
     @Basic

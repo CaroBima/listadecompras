@@ -10,8 +10,8 @@ import javax.persistence.Id;
 @Entity
 public class TipoProducto implements Serializable {
     
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idTipoProducto;
     
     @Basic

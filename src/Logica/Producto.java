@@ -12,8 +12,8 @@ import javax.persistence.OneToOne;
 @Entity
 public class Producto implements Serializable {
     
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idProducto;
     
     @OneToOne

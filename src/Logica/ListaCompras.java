@@ -15,8 +15,8 @@ import javax.persistence.TemporalType;
 @Entity
 public class ListaCompras implements Serializable {
     
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idLista;
     
     @ManyToOne
