@@ -170,6 +170,10 @@ public class DlgAniadirProducto extends javax.swing.JDialog {
         
         //paso los parametros a la logica
         control.agregarProducto(nombre, capacidad, indice);
+        //limpio los campos para que se pueda agregar otro producto
+        txtNombreProducto.setText("");
+        txtCapacidad.setText("");
+        //cboTipoProd.setSelectedIndex(0);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed

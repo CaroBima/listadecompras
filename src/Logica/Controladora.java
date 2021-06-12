@@ -10,7 +10,7 @@ public class Controladora {
     
     //Agrega un nuevo tipo de producto
     public void agregarNuevoTipoProducto(String nuevoTipoProducto){
-    
+                
     }
     
 }
