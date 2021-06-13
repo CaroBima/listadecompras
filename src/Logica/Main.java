@@ -15,7 +15,11 @@ public class Main {
     
         //Inicializo la instancia de la controladora de persistencia
         ControladoraPersistencia ControlPersis = new ControladoraPersistencia();
-        
+        TipoProducto tipoProd = new TipoProducto();
+        String cat = "Almacén";
+        tipoProd.setCategoría(cat);
+        //tipoProd.setIdTipoProducto(0);
+        ControlPersis.crearTipoProducto(tipoProd);
         
     }
     

@@ -14,11 +14,12 @@ public class ControladoraPersistencia {
     TipoProductoJpaController tipoProdJPA = new TipoProductoJpaController();
     
     //metodo para crear tipo de producto
-    public void crearTipoProducto (TipoProducto tipoProd){
+    public void crearTipoProducto ( TipoProducto tipoProd){
         try{
-            tipoProdJPA.create(tipoProd);
+            tipoProdJPA.create(tipoProd); //falla aca
          } catch (Exception ex) {
-            java.util.logging.Logger.getLogger(ControladoraPersistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+             System.out.println("error");
+             java.util.logging.Logger.getLogger(ControladoraPersistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
       
     }
@@ -26,7 +27,7 @@ public class ControladoraPersistencia {
     //eliminar tipo de producto
     public void borrarTipoProducto(TipoProducto tipoProd){
         int indice;
-        indice = tipoProd.getIdTipoProducto();
+        indice = tipoProd.getIdTipoProducto(); //obtengo el indice del dato a borrar
         try {
             tipoProdJPA.destroy(indice);
         } catch (NonexistentEntityException ex) {
@@ -38,7 +39,7 @@ public class ControladoraPersistencia {
      //modificar tipo de producto
      public void editarTipoProducto (TipoProducto tipoProd){
         try {
-            tipoProdJPA.edit(tipoProd);
+            tipoProdJPA.edit(tipoProd); //paso por parametro el producto con las modificaciones
         } catch (Exception ex) {
             java.util.logging.Logger.getLogger(ControladoraPersistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }

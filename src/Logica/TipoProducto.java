@@ -11,14 +11,14 @@ import javax.persistence.Id;
 public class TipoProducto implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTipoProducto;
     
     @Basic
     private String categoría; //almacen, panaderia, electrónica, indumentaria, etc
 
-    public TipoProducto(int idTipoProducto, String categoría) {
-        this.idTipoProducto = idTipoProducto;
+    public TipoProducto(String categoría) {
+       // this.idTipoProducto = idTipoProducto;
         this.categoría = categoría;
     }
     
