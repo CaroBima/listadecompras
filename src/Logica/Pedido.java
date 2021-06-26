@@ -16,6 +16,7 @@ public class Pedido implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    //@GeneratedValue(strategy=GenerationType.IDENTITY)
     private int idPedido; 
     
     @Basic
@@ -29,13 +30,14 @@ public class Pedido implements Serializable {
      public Pedido() {
     }
 
-     
-    public Pedido(double precioFacturado, double precioFinalPedido, int idPedido, Date fechaPedido) {
+    public Pedido(double precioFacturado, double precioFinalPedido, Date fechaPedido) {
         this.precioFacturado = precioFacturado;
         this.precioFinalPedido = precioFinalPedido;
-        this.idPedido = idPedido;
         this.fechaPedido = fechaPedido;
     }
+
+     
+    
 
     public double getPrecioFacturado() {
         return precioFacturado;

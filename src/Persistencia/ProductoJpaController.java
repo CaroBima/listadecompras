@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Persistencia;
 
 import Logica.Producto;
@@ -13,7 +17,10 @@ import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-
+/**
+ *
+ * @author Caro
+ */
 public class ProductoJpaController implements Serializable {
 
     public ProductoJpaController(EntityManagerFactory emf) {
@@ -21,9 +28,12 @@ public class ProductoJpaController implements Serializable {
     }
     private EntityManagerFactory emf = null;
 
-     public ProductoJpaController(){
+     //metodo constructor
+    public ProductoJpaController(){
         emf = Persistence.createEntityManagerFactory("ListaComprasPU");
     }
+    
+    
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }

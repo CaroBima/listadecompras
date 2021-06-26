@@ -14,6 +14,7 @@ public class Producto implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    //@GeneratedValue(strategy=GenerationType.IDENTITY)
     private int idProducto;
     
     @OneToOne
@@ -27,13 +28,13 @@ public class Producto implements Serializable {
     public Producto() {
     }
 
-    public Producto(int idProducto, String tipoProducto, String nombreProducto, String capacidad, String precioProducto) {
-        this.idProducto = idProducto;
+    public Producto(String tipoProducto, String nombreProducto, String capacidad) {
         this.tipoProducto = tipoProducto;
         this.nombreProducto = nombreProducto;
         this.capacidad = capacidad;
-        /*this.precioProducto = precioProducto;*/
     }
+
+    
 
     public int getIdProducto() {
         return idProducto;

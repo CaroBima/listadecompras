@@ -17,6 +17,7 @@ public class ListaCompras implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    //@GeneratedValue(strategy=GenerationType.IDENTITY)
     private int idLista;
     
     @ManyToOne
@@ -36,8 +37,7 @@ public class ListaCompras implements Serializable {
     public ListaCompras() {
     }
 
-    public ListaCompras(int idLista, int idPedido, int idProducto, Date fechaAgregado, boolean disponibleONo, int unidadesPedidas, double precioUnitario) {
-        this.idLista = idLista;
+    public ListaCompras(int idPedido, int idProducto, Date fechaAgregado, boolean disponibleONo, int unidadesPedidas, double precioUnitario) {
         this.idPedido = idPedido;
         this.idProducto = idProducto;
         this.fechaAgregado = fechaAgregado;
@@ -45,6 +45,8 @@ public class ListaCompras implements Serializable {
         this.unidadesPedidas = unidadesPedidas;
         this.precioUnitario = precioUnitario;
     }
+
+     
 
     public int getIdLista() {
         return idLista;
