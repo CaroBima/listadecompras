@@ -12,8 +12,14 @@ public class Main {
         formulario.setVisible(true);
         formulario.setLocationRelativeTo(null); //ubica el form en le centro de la pantalla
         
+        
+      /* probando si dejaba guardar en bd
         TipoProducto tipoProd = new TipoProducto();
+        ControladoraPersistencia control = new ControladoraPersistencia();
         tipoProd.setCategoría("Almacén");
+        
+        control.agregarTipoProducto(tipoProd);
+        */
         
         
       

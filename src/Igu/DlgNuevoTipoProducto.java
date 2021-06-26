@@ -1,6 +1,7 @@
 package Igu;
 
 import Logica.Controladora;
+import javax.swing.JOptionPane;
 
 
 public class DlgNuevoTipoProducto extends javax.swing.JDialog {
@@ -121,6 +122,8 @@ public class DlgNuevoTipoProducto extends javax.swing.JDialog {
         String nuevoTipoProd;
         nuevoTipoProd = txtNuevoTipoProducto.getText();
         control.agregarNuevoTipoProducto(nuevoTipoProd);
+        txtNuevoTipoProducto.setText("");
+        JOptionPane.showMessageDialog(null, "Tipo de producto agregado correctamente");
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
