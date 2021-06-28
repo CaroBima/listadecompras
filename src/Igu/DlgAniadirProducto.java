@@ -5,9 +5,8 @@ package Igu;
 import Logica.Controladora;
 import Logica.TipoProducto;
 import Persistencia.ControladoraPersistencia;
-import java.awt.List;
 import java.util.ArrayList;
-
+import java.util.List;
 
 public class DlgAniadirProducto extends javax.swing.JDialog {
 
@@ -17,6 +16,7 @@ public class DlgAniadirProducto extends javax.swing.JDialog {
     public DlgAniadirProducto(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.cargarcboTipoProducto();
         
     }
 
@@ -190,6 +190,7 @@ public class DlgAniadirProducto extends javax.swing.JDialog {
         
         //paso los parametros a la logica
         control.agregarProducto(nombre, capacidad, indice);
+       
         //limpio los campos para que se pueda agregar otro producto
         txtNombreProducto.setText("");
         txtCapacidad.setText("");
@@ -210,11 +211,25 @@ public class DlgAniadirProducto extends javax.swing.JDialog {
 
     //agrego una funcion para poder recuperar los tipo de productos de la bd
     private void cargarcboTipoProducto(){
+        
         List<TipoProducto> listaTipoProd = new ArrayList<TipoProducto>();
-        //java.util.List<String> lista = new ArrayList<String>();
         ControladoraPersistencia controlcbo = new ControladoraPersistencia();
+        int cantTipoProd = 0;
+        int contador = 0;
+        String tipoProdstring;
+        
+        //recupero los tipos de productos guardados en la bd
         listaTipoProd = controlcbo.recuperarTipoProducto();
-       
+        
+        //agrego un primer item "-"
+        cboTipoProd.addItem("-");
+        
+        //recorro la lista para cargar los datos en el cbobox de tipo de productos
+        for( TipoProducto tipoProd : listaTipoProd){
+            tipoProdstring = tipoProd.getCategoría();
+            cboTipoProd.addItem(tipoProdstring);
+        }
+        
     }
     
     private void cboTipoProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboTipoProdActionPerformed
