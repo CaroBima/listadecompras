@@ -3,6 +3,7 @@
 package Logica;
 
 import Persistencia.ControladoraPersistencia;
+import java.util.List;
 
 public class Controladora {
     //Agrega un nuevo producto a la base de datos
@@ -20,4 +21,8 @@ public class Controladora {
         control.agregarTipoProducto(tipoProd);
     }
     
+    public List recuperarTipoProducto(){
+      ControladoraPersistencia control = new ControladoraPersistencia();
+      return control.recuperarTipoProducto();
+    }
 }

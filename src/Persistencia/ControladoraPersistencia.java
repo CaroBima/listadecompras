@@ -2,6 +2,7 @@
 package Persistencia;
 
 import Logica.TipoProducto;
+import java.util.List;
 
 public class ControladoraPersistencia {
 
@@ -10,4 +11,9 @@ public class ControladoraPersistencia {
         control.create(tipoproducto);
     }
     
+    public List recuperarTipoProducto(){
+        TipoProductoJpaController control = new TipoProductoJpaController();
+        return control.findTipoProductoEntities();
+        
+    }
 }

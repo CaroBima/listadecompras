@@ -49,6 +49,12 @@ public class DlgAniadirProducto extends javax.swing.JDialog {
 
         lblTipoProd.setText("Tipo de producto: ");
 
+        cboTipoProd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboTipoProdActionPerformed(evt);
+            }
+        });
+
         btnNuevoTipoProd.setText("+");
         btnNuevoTipoProd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -195,6 +201,10 @@ public class DlgAniadirProducto extends javax.swing.JDialog {
         dlgNuevoTipo.setLocationRelativeTo(this);
         dlgNuevoTipo.setVisible(true);
     }//GEN-LAST:event_btnNuevoTipoProdActionPerformed
+
+    private void cboTipoProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboTipoProdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboTipoProdActionPerformed
 
    
 
