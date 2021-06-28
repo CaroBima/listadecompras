@@ -3,6 +3,11 @@
 package Igu;
 
 import Logica.Controladora;
+import Logica.TipoProducto;
+import Persistencia.ControladoraPersistencia;
+import java.awt.List;
+import java.util.ArrayList;
+
 
 public class DlgAniadirProducto extends javax.swing.JDialog {
 
@@ -12,6 +17,7 @@ public class DlgAniadirProducto extends javax.swing.JDialog {
     public DlgAniadirProducto(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        
     }
 
     /**
@@ -202,6 +208,15 @@ public class DlgAniadirProducto extends javax.swing.JDialog {
         dlgNuevoTipo.setVisible(true);
     }//GEN-LAST:event_btnNuevoTipoProdActionPerformed
 
+    //agrego una funcion para poder recuperar los tipo de productos de la bd
+    private void cargarcboTipoProducto(){
+        List<TipoProducto> listaTipoProd = new ArrayList<TipoProducto>();
+        //java.util.List<String> lista = new ArrayList<String>();
+        ControladoraPersistencia controlcbo = new ControladoraPersistencia();
+        listaTipoProd = controlcbo.recuperarTipoProducto();
+       
+    }
+    
     private void cboTipoProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboTipoProdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cboTipoProdActionPerformed
