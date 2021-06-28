@@ -18,7 +18,8 @@ public class Producto implements Serializable {
     private int idProducto;
     
     @ManyToOne
-    private int tipoProducto; // categoria: limpieza, almacen, electrónica, etc
+    TipoProducto producto;
+    //private int tipoProducto; // categoria: limpieza, almacen, electrónica, etc
     
     @Basic
     private String nombreProducto;
@@ -30,16 +31,17 @@ public class Producto implements Serializable {
     public Producto() {
     }
 
-    public Producto(int idProducto, int tipoProducto, String nombreProducto, String capacidad) {
+    public Producto(int idProducto, TipoProducto producto, String nombreProducto, String capacidad) {
         this.idProducto = idProducto;
-        this.tipoProducto = tipoProducto;
+        this.producto = producto;
         this.nombreProducto = nombreProducto;
         this.capacidad = capacidad;
     }
 
     
-    //getters & setters 
     
+    //getters & setters 
+
     public int getIdProducto() {
         return idProducto;
     }
@@ -48,12 +50,12 @@ public class Producto implements Serializable {
         this.idProducto = idProducto;
     }
 
-    public int getTipoProducto() {
-        return tipoProducto;
+    public TipoProducto getProducto() {
+        return producto;
     }
 
-    public void setTipoProducto(int tipoProducto) {
-        this.tipoProducto = tipoProducto;
+    public void setProducto(TipoProducto producto) {
+        this.producto = producto;
     }
 
     public String getNombreProducto() {
@@ -71,22 +73,8 @@ public class Producto implements Serializable {
     public void setCapacidad(String capacidad) {
         this.capacidad = capacidad;
     }
-
-
     
 }
 
-  /*  Lo quito de esta clase porque va a estar en la clase pedidos, el precio puede
-    variar entre pedidos dependiendo de la inflacion, guardandolo ahi se puede ver la
-    variacion de precios del producto
-    
-    public String getPrecioProducto() {
-        return precioProducto;
-    }
 
-    public void setPrecioProducto(String precioProducto) {
-        this.precioProducto = precioProducto;
-    }
-    */
-    
    

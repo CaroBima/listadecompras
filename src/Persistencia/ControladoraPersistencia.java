@@ -22,12 +22,12 @@ public class ControladoraPersistencia {
     
     //Producto:
     
-    public void agregarProducto(String nombre, String capacidad, int idTipoProd){
+    public void agregarProducto(String nombre, String capacidad, TipoProducto idTipoProd){
         ProductoJpaController control = new ProductoJpaController();
         Producto nuevoProd = new Producto();
         nuevoProd.setNombreProducto(nombre);
         nuevoProd.setCapacidad(capacidad);
-        nuevoProd.setTipoProducto(idTipoProd);
+        nuevoProd.setProducto(idTipoProd);
         control.create(nuevoProd);
        
     

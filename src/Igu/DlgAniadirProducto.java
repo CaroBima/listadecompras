@@ -179,10 +179,12 @@ public class DlgAniadirProducto extends javax.swing.JDialog {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         Controladora control = new Controladora();
         String nombre, capacidad;
-        int indice;
+        TipoProducto indice = null;
         nombre = txtNombreProducto.getText();
         capacidad = txtCapacidad.getText();
-        indice = cboTipoProd.getSelectedIndex() - 1;
+        System.out.println((cboTipoProd.getSelectedIndex() - 1) + " " + String.valueOf(cboTipoProd.getSelectedItem()) );
+        indice.setCategoría(String.valueOf(cboTipoProd.getSelectedItem())); //<--- error
+        indice.setIdTipoProducto( (cboTipoProd.getSelectedIndex() - 1));//<--- error
         
         //paso los parametros a la logica
         control.agregarProducto(nombre, capacidad, indice);
