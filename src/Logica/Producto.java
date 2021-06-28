@@ -7,35 +7,39 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
+
 
 @Entity
 public class Producto implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    //@GeneratedValue(strategy=GenerationType.IDENTITY)
     private int idProducto;
     
-    @OneToOne
-    private String tipoProducto; // categoria: limpieza, almacen, electrónica, etc
+    @ManyToOne
+    private int tipoProducto; // categoria: limpieza, almacen, electrónica, etc
     
     @Basic
     private String nombreProducto;
     private String capacidad;
     
 
+    //constructores
+    
     public Producto() {
     }
 
-    public Producto(String tipoProducto, String nombreProducto, String capacidad) {
+    public Producto(int idProducto, int tipoProducto, String nombreProducto, String capacidad) {
+        this.idProducto = idProducto;
         this.tipoProducto = tipoProducto;
         this.nombreProducto = nombreProducto;
         this.capacidad = capacidad;
     }
 
     
-
+    //getters & setters 
+    
     public int getIdProducto() {
         return idProducto;
     }
@@ -44,11 +48,11 @@ public class Producto implements Serializable {
         this.idProducto = idProducto;
     }
 
-    public String getTipoProducto() {
+    public int getTipoProducto() {
         return tipoProducto;
     }
 
-    public void setTipoProducto(String tipoProducto) {
+    public void setTipoProducto(int tipoProducto) {
         this.tipoProducto = tipoProducto;
     }
 
@@ -68,6 +72,10 @@ public class Producto implements Serializable {
         this.capacidad = capacidad;
     }
 
+
+    
+}
+
   /*  Lo quito de esta clase porque va a estar en la clase pedidos, el precio puede
     variar entre pedidos dependiendo de la inflacion, guardandolo ahi se puede ver la
     variacion de precios del producto
@@ -81,5 +89,4 @@ public class Producto implements Serializable {
     }
     */
     
-    
-}
+   

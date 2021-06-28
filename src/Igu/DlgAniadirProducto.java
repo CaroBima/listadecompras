@@ -9,15 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DlgAniadirProducto extends javax.swing.JDialog {
-
-   
-   
-    
+ 
     public DlgAniadirProducto(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         this.cargarcboTipoProducto();
-        
     }
 
     /**
@@ -186,7 +182,7 @@ public class DlgAniadirProducto extends javax.swing.JDialog {
         int indice;
         nombre = txtNombreProducto.getText();
         capacidad = txtCapacidad.getText();
-        indice = cboTipoProd.getSelectedIndex();
+        indice = cboTipoProd.getSelectedIndex() - 1;
         
         //paso los parametros a la logica
         control.agregarProducto(nombre, capacidad, indice);
@@ -207,10 +203,10 @@ public class DlgAniadirProducto extends javax.swing.JDialog {
         DlgNuevoTipoProducto dlgNuevoTipo = new DlgNuevoTipoProducto(null, true);
         dlgNuevoTipo.setLocationRelativeTo(this);
         dlgNuevoTipo.setVisible(true);
+        
         //vacío el listado de productos para poder cargarlos nuevamente con los productos añadidos en el form de nuevo tipo de producto
         cboTipoProd.removeAllItems();
-        this.cargarcboTipoProducto();
-        
+        this.cargarcboTipoProducto();    
     }//GEN-LAST:event_btnNuevoTipoProdActionPerformed
 
     //agrego una funcion para poder recuperar los tipo de productos de la bd

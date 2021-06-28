@@ -3,6 +3,7 @@
   <persistence-unit name="ListaComprasPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>Logica.TipoProducto</class>
+    <class>Logica.Producto</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/listadecompras?serverTimeZone=UTC"/>
       <property name="javax.persistence.jdbc.user" value="consultas"/>

@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Controladora {
     //Agrega un nuevo producto a la base de datos
-    public void agregarProducto(String nombre, String capacidad, int IndiceTipoPord ){
+    public void agregarProducto(String nombre, String capacidad, int idTipoProd){
        
     }
     
