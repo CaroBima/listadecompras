@@ -9,7 +9,9 @@ public class Controladora {
     //Agrega un nuevo producto a la base de datos
     public void agregarProducto(String nombre, String capacidad, TipoProducto idTipoProd){
        ControladoraPersistencia control = new ControladoraPersistencia();
+       
        control.agregarProducto(nombre, capacidad, idTipoProd);
+       
     }
     
     //Agrega un nuevo tipo de producto
