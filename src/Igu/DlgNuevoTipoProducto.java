@@ -118,12 +118,14 @@ public class DlgNuevoTipoProducto extends javax.swing.JDialog {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        
         Controladora control = new Controladora();
         String nuevoTipoProd;
         nuevoTipoProd = txtNuevoTipoProducto.getText();
         control.agregarNuevoTipoProducto(nuevoTipoProd);
         txtNuevoTipoProducto.setText("");
         JOptionPane.showMessageDialog(null, "Tipo de producto agregado correctamente");
+        
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**

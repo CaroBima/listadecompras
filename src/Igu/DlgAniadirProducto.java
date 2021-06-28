@@ -194,19 +194,23 @@ public class DlgAniadirProducto extends javax.swing.JDialog {
         //limpio los campos para que se pueda agregar otro producto
         txtNombreProducto.setText("");
         txtCapacidad.setText("");
-        //cboTipoProd.setSelectedIndex(0);
+        cboTipoProd.setSelectedIndex(0);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
             txtNombreProducto.setText("");
             txtCapacidad.setText("");
-            //cboTipoProd.setSelectedIndex(0);
+            cboTipoProd.setSelectedIndex(0);
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnNuevoTipoProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoTipoProdActionPerformed
         DlgNuevoTipoProducto dlgNuevoTipo = new DlgNuevoTipoProducto(null, true);
         dlgNuevoTipo.setLocationRelativeTo(this);
         dlgNuevoTipo.setVisible(true);
+        //vacío el listado de productos para poder cargarlos nuevamente con los productos añadidos en el form de nuevo tipo de producto
+        cboTipoProd.removeAllItems();
+        this.cargarcboTipoProducto();
+        
     }//GEN-LAST:event_btnNuevoTipoProdActionPerformed
 
     //agrego una funcion para poder recuperar los tipo de productos de la bd
@@ -232,8 +236,11 @@ public class DlgAniadirProducto extends javax.swing.JDialog {
         
     }
     
+    
+    
+    
     private void cboTipoProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboTipoProdActionPerformed
-        // TODO add your handling code here:
+        //this.cargarcboTipoProducto();
     }//GEN-LAST:event_cboTipoProdActionPerformed
 
    
