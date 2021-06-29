@@ -3,6 +3,7 @@ package Logica;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +18,7 @@ public class Producto implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idProducto;
     
-    @ManyToOne
+    @ManyToOne //(cascade = CascadeType.PERSIST) 
     TipoProducto producto;
     //private int tipoProducto; // categoria: limpieza, almacen, electrónica, etc
     

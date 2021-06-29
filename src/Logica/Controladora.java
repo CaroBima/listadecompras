@@ -13,6 +13,7 @@ public class Controladora {
         control.agregarProducto(nombre, capacidad, idTipoProd);
     }
     
+    
     //Agrega un nuevo tipo de producto
     public void agregarNuevoTipoProducto(String nuevoTipoProducto){
                 

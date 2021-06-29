@@ -14,19 +14,22 @@ public class ControladoraPersistencia {
     }
     
     public List recuperarTipoProducto(){
+        //recupera todos los tipos de producto
         TipoProductoJpaController control = new TipoProductoJpaController();
         return control.findTipoProductoEntities();
         
     }
     
-    public boolean estaElTipoProducto(TipoProducto tipoProd){
+    public void buscarTipoProducto(TipoProducto tipoProd){
+        //falta terminar de definir
         TipoProductoJpaController control = new TipoProductoJpaController();
         TipoProducto tipoProdCtrl = new TipoProducto();
         int idTipoProd;
         idTipoProd = tipoProd.getIdTipoProducto();
-        tipoProdCtrl = control.findTipoProducto(idTipoProd);   
-            return tipoProdCtrl != null; // retorna true si esta en la bd
+        
     }
+        
+    
     
     //Producto:
     
