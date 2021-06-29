@@ -19,6 +19,14 @@ public class ControladoraPersistencia {
         
     }
     
+    public boolean estaElTipoProducto(TipoProducto tipoProd){
+        TipoProductoJpaController control = new TipoProductoJpaController();
+        TipoProducto tipoProdCtrl = new TipoProducto();
+        int idTipoProd;
+        idTipoProd = tipoProd.getIdTipoProducto();
+        tipoProdCtrl = control.findTipoProducto(idTipoProd);   
+            return tipoProdCtrl != null; // retorna true si esta en la bd
+    }
     
     //Producto:
     
@@ -29,7 +37,7 @@ public class ControladoraPersistencia {
         nuevoProd.setCapacidad(capacidad);
         nuevoProd.setProducto(idTipoProd);
         control.create(nuevoProd);
-       
-    
     }
+
+    
 }
