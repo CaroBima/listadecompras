@@ -47,6 +47,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         mnuAniadir.setText("Añadir");
 
         MnuAniadirLista.setText("Llista");
+        MnuAniadirLista.setActionCommand("Lista");
         mnuAniadir.add(MnuAniadirLista);
 
         mnuAniadirProducto.setText("Producto");
